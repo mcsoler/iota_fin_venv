@@ -1,0 +1,24 @@
+import os
+
+from dotenv import load_dotenv
+
+from iota_sdk import Wallet
+
+# This example requests funds from the faucet
+
+load_dotenv()
+
+FAUCET_URL = os.environ.get(
+        'FAUCET_URL',
+        #'https://faucet.testnet.shimmer.network/api/enqueue') #NodoShimmer
+        'http://35.194.18.16:8091/')
+
+wallet = Wallet(os.environ['WALLET_DB_PATH'])
+
+#account = wallet.get_account('TestCR2023')
+account = wallet.get_account('nodorenzo')
+address = account.addresses()[0].address
+print(address)
+
+response = wallet.get_client().request_funds_from_faucet(FAUCET_URL, address=address)
+print(response)

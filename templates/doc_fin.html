@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>P.A.I.P Ciberseguridad</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_prod.css') }}">
+        <link rel="shortcut icon" href="/static/css/img/logo_paid.png">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="/static/css/img/logo_paid.png" alt="Logo" width="30" height="24" class="d-inline-block a
+               lign-text-top">
+              P.A.i.P Cyberseguridad
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                      {% if username %}
+                          <p>Bienvenido, {{ username }}</p>
+                      {% else %}
+                          <p>Por favor, inicia sesión</p>
+                      {% endif %}
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">App cifrado de datos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('documentacion') }}">Documentación</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+	<p></p>
+	<p></p>
+	<div class="row">
+  	    <div class="col-4 my-5">
+              <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link" href="#item-1">Backend</a>
+        	  <nav class="nav nav-pills flex-column">
+          	    <a class="nav-link ms-3 my-1" href="#item-1-1">Lenguaje de Programación:</a>
+          	    <a class="nav-link ms-3 my-1" href="#item-1-2">Framework Web:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-1-3">Gestión de Dependencias:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-1-4">Servidor de Producción:</a>
+        	  </nav>
+                  <a class="nav-link" href="#item-2">Frontend</a>
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-2-1">Interfaz de usuario:</a>
+                    <a class="nav-link ms-3 my-1" href="#item-2-2">Biblioteca de Frontend:</a>
+                    <a class="nav-link ms-3 my-1" href="#item-2-3">Comunicación con Backend:</a>
+                  </nav>
+                  <a class="nav-link" href="#item-3">Bases de Datos</a>
+                  <nav class="nav nav-pills flex-column">
+                    <a class="nav-link ms-3 my-1" href="#item-3-1">Sistema de Base de Datos:</a>
+                  </nav>
+		  <a class="nav-link" href="#item-4">Cifrado de Datos</a>
+		  <nav class="nav nav-pills flex-column">
+		    <a class="nav-link ms-3 my-1" href="#item-4-1">Biblioteca de Criptografía:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-4-2">Cifrado IOTA_SDK:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-4-3">Claves de Cifrado:</a>
+		  </nav>
+		  <a class="nav-link" href="#item-5">Integración con Tangle</a>
+		  <nav class="nav nav-pills flex-column">
+		    <a class="nav-link ms-3 my-1" href="#item-5-1">SDK de IOTA:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-5-2">Transacciones Tangle:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-5-3">Seguridad de Transacciones:</a>
+		  </nav>
+		  <a class="nav-link" href="#item-6">Deployment</a>
+      	  	  <nav class="nav nav-pills flex-column">
+		    <a class="nav-link ms-3 my-1" href="#item-6-1">Contenedores:</a>
+		    <a class="nav-link ms-3 my-1" href="#item-6-2">Orquestación:</a>
+		  </nav>
+		</nav>
+    	      </nav>
+  	    </div>
+           
+  	    <div class="col-8">
+    		<div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
+		    <p></p>
+		    <p></p>
+      		    <div id="item-1">
+        		<h4>Backend</h4>
+        		<p>El backend, en el contexto del desarrollo web y software, es la capa de procesamiento de datos y lógica detrás de una aplicación o sitio web. Técnicamente, comprende los servidores, bases de datos, y aplicaciones que corren en el servidor, que juntos procesan, almacenan y gestionan la información.</p>
+      		    </div>
+      		    <div id="item-1-1">
+        		<h5>Lenguaje de Programación:</h5>
+        		<p>Python 3.x.</p>
+      		    </div>
+      		    <div id="item-1-2">
+        		<h5>Framework Web:</h5>
+        		<p>Flask, para manejar las solicitudes HTTP, la lógica del servidor, y las respuestas.</p>
+      		    </div>
+		    <div id="item-1-3">
+                        <h5>Gestión de Dependencias:</h5>
+                        <p>Pip3 para la gestión de librerías externas.</p>
+                    </div>
+		    <div id="item-1-4">
+                        <h5>Servidor de Producción:</h5>
+                        <p>Gunicorn y uWSGI para desplegar la aplicación en producción.</p>
+                    </div>
+      		    <div id="item-2">
+        		<h4>Frontend</h4>
+        		<p>El frontend es la parte del desarrollo web que se dedica a la parte frontal de un sitio web, en pocas palabras del diseño de un sitio web, desde la estructura del sitio hasta los estilos como colores, fondos, tamaños hasta llegar a las animaciones y efectos</p>
+     		    </div>
+		    <div id="item-2-1">
+			<h5>Interfaz de usuario:</h5>
+			<p>HTML5, CSS3, y JavaScript</p>
+		    </div>
+		    <div id="item-2-2">
+			<h5>Biblioteca de Frontend:</h5>
+			<p>Bootstrap y JavaScript para el diseño responsivo.</p>
+		    </div>
+		    <div id="item-2-3">
+			<h5>Comunicación con Backend:</h5>
+			<p>Framework Flask con python-redis</p>
+		    </div>
+      		    <div id="item-3">
+        		<h4>Bases de datos</h4>
+        		<p>Recopilación organizada de información o datos estructurados, que normalmente se almacena de forma electrónica en un sistema informático. Normalmente, una base de datos está controlada por un sistema de gestión de bases de datos (DBMS)</p>
+      		    </div>
+      		    <div id="item-3-1">
+        		<h5>Sistema de Base de Datos:</h5>
+        		<p>Redis, utilizado para almacenar datos en memoria con alta velocidad de acceso, como sesiones de usuario, caché, o estados temporales de la aplicación.</p>
+      		    </div>
+		    <div id="item-4">
+			<h4>Cifrado de Datos</h4>
+			<p>El cifrado en ciberseguridad es la conversión de datos de un formato legible a un formato codificado. Los datos cifrados solo se pueden leer o procesar luego de descifrarlos.</p>
+		    </div>
+		    <div id="item-4-1">
+			<h5>Biblioteca de Criptografía:</h5>
+			<p>Cryptography.fernet para cifrar archivos y datos antes de su transmisión</p>
+		    </div>
+		    <div id="item-4-2">
+			<h5>Cifrado IOTA_SDK:</h5>
+			<p>Ed25519 es un algoritmo de firma digital ampliamente adoptado conocido por su fuerte seguridad y eficiencia. Firmar con Ed25519 garantiza datos integridad, autenticidad y no repudio. Al firmar con Ed25519, una clave privada genera una firma digital que se puede verificar con la clave pública correspondiente.</p>
+		    </div>
+		    <div id="item-4-3">
+			<h5>Claves de Cifrado:</h5>
+			<p>Claves simétricas generadas y manejadas de manera segura para el uso de IOTA_SDK y Fernet</p>
+		    </div>
+		    <div id="item-5">
+			<h4>Integración con Tangle</h4>
+			<p>A diferencia de la cadena de bloques tradicional, Tangle es un sistema de contabilidad distribuida que utiliza una estructura de datos conocida como Directed Acyclic Graph (DAG) para almacenar sus transacciones.</p>
+		    </div>
+		    <div id="item-5-1">
+			<h5>SDK de IOTA:</h5>
+			<p>Biblioteca iota_sdk, utilizado para interactuar con la red Tangle</p>
+		    </div>
+		    <div id="item-5-2">
+			<h5>Transacciones Tangle:</h5>
+			<p>Capacidad de enviar datos y archivos cifrados como mensajes o transacciones a un nodo de Tangle específico.</p>
+		    </div>
+		    <div id="item-5-3">
+			<h5>Seguridad de Transacciones:</h5>
+			<p>Aseguramiento de la integridad y la no alteración de los datos durante la transmisión.</p>
+		    </div>
+		    <div id="item-6">
+			<h4>Deployment</h4>
+			<p>En el contexto de la tecnología de la información y el desarrollo de software se refiere al proceso de poner en funcionamiento una aplicación o un conjunto de aplicaciones en un entorno de producción.</p>
+		    </div>
+		    <div id="item-6-1">
+			<h5>Contenedores:</h5>
+			<p>Docker para empaquetar la aplicación y sus dependencias.</p>
+		    </div>
+		    <div id="item-6-2">
+			<h5>Orquestación:</h5>
+			<p>Kubernetes o Docker Swarm si se requiere escalar y gestionar múltiples contenedores</p>
+		    </div>
+    		</div>
+  	    </div>
+	</div>	
+        <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>
+

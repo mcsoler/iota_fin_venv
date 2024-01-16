@@ -1,0 +1,24 @@
+import os
+
+from dotenv import load_dotenv
+
+from iota_sdk import Wallet
+
+load_dotenv()
+
+# This example generates a new address.
+
+wallet = Wallet(os.environ['WALLET_DB_PATH'])
+
+STRONGHOLD_PASSWORD = os.environ.get(
+                    'STRONGHOLD_PASSWORD', 'TangleCR23')
+
+if 'STRONGHOLD_PASSWORD' not in os.environ:
+    raise Exception(".env STRONGHOLD_PASSWORD is undefined, see .env.example")
+
+wallet.set_stronghold_password(os.environ["STRONGHOLD_PASSWORD"])
+
+account = wallet.get_account('TestCR23')
+
+address = account.generate_ed25519_addresses(1)
+print('Generated address:', address[0].address)

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>P.A.I.P Ciberseguridad</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles_prod.css') }}">
+        <link rel="shortcut icon" href="/static/css/img/logo_paid.png">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes">
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+    <div class="container mt-5">
+	<div class="row justify-content-center">
+	    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+	        <div class="card">
+		    <div class="card-header text-center">Iniciar Sesión</div>
+	                <div class="card-body">
+			    <form method="post">
+				 <div class="mb-3">   
+        			    <label for="username" class="form-label">Nombre de usuario:</label>
+        			    <input type="text" class="form-control" id="username" name="username" required>
+				 </div>
+				 <div class="mb-3">
+        			    <label for="password" class="form-label">Contraseña:</label>
+        			    <input type="password" class="form-control" id="password" name="password" required>
+				 </div>
+				 <div class="d-grid">
+                                     <input type="submit" class="btn btn-primary" value="Ingresar">
+                                 </div>
+ 				 <div class="d-grid">
+			             <p></p>
+				     <a href="/register" class="btn btn-primary">Registrarse</a>
+				 </div>
+		            </form>
+			</div>
+		    </div>
+                </div>
+	    </div>
+        </div>
+</body>
+</html>

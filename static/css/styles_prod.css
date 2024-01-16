@@ -1,0 +1,237 @@
+.yellow-gradient {
+	    background: linear-gradient(to bottom right, #000000, #D3D3D3); /* de amarillo oscuro (#FFD700) en la esquina superior izquierda a amarillo claro (#FFFFE0) en la esquina inferior derecha */
+    }
+
+.transparent-image {
+	background: linear-gradient(rgba(255, 255,255,0.5), rgba(255, 255, 255, 0.5)), url('img/app.png'); 
+        background-size: 30%;
+}
+
+
+.original-image {
+	//* background-image: url('img/app.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat; 
+	background-position: center;
+	flex: 1;
+	padding: 15px; *//
+	position: relative;
+	height: 100%; 
+	display: flex;
+	justify-content: center;  /* Centra horizontalmente la imagen */
+	align-items: center;
+}
+
+.img-responsive {
+	width: 200%;
+        margin: auto;	
+}
+	
+.title-bar {
+	background-color: #333;  /* Color de fondo de la barra. Puedes cambiarlo según tus preferencias. */
+	padding: 3px 0;        /* Espaciado vertical para la barra */
+	text-align: center;     /* Centrar el título en la barra */
+	color: white;           /* Color del texto del título */
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.green-button {
+	background-color: #80e27e; /* Color de fondo verde claro */
+	border-color: #66bb6a; /* Color de borde verde claro */
+}
+
+.my-form {
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	border-radius: .25rem;
+	border: 1px solid #ced4da;
+	cursor: pointer;
+	background-color: #e9ecef;
+	text-align: center;
+}
+
+.my-form button:hover {
+	background-color: #45a049; /* Color de fondo más oscuro para el hover */
+}
+
+#file-name {
+	padding: 8px 12px;
+	border: 1px solid #ced4da;
+	border-radius: 4px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: white; /* Establece el color de fondo a blanco */
+	display: inline-block;
+	max-width: 250px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.transaction-result {
+	background-color: #f7f9fc; /* Color de fondo claro */
+	border: 4px solid #d1d8e0; /* Borde del contenedor */
+	border-radius: 5px; /* Esquinas redondeadas */
+	padding: 10px; /* Espaciado interno */
+	margin-bottom: 20px; /* Espacio debajo del contenedor */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+	text-align: center; /* Centrar el texto */
+    	font-weight: bold; /* Texto en negrita */	
+}
+
+#result-text {
+	color: #43a047; /* Color del texto del resultado */
+}
+
+.sidebar {
+	width: 200px;
+	background-color: #f7f7f7;
+	padding: 15px;
+	box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+}
+
+.sidebar li {
+	list-style-type: none;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 60px;
+	background-color: #f4f4f4;
+	//* border: 2px solid #e0e0e0; *//
+	border-radius: 5px;
+	box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.speedometer {
+	width: 200px;
+	height: 200px;
+	border: 12px solid #555;
+	border-radius: 50%;
+	position: relative;
+	background-color: #ffffff;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.needle {
+	width: 3px;
+	height: 105px;
+	background-color: crimson;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform-origin: 50% 100%;
+	transform: rotate(0deg);
+	transition: transform 0.5s;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.speed-value {
+	margin-top: 10px;
+	font-weight: bold;
+	font-size: 10px;
+	color: #333;
+}
+
+.custom-navbar-text {
+	    font-weight: bold;
+	  //*  margin-left: 10px;*//
+}
+
+.custom-navbar-bg {
+	background-color: #32CD32;  /* Cambia este valor al tono de verde que desees */
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.form-control[type="file"] {
+	position: absolute;
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.input-group-text.my-form {
+	background-color: #AFEEAF; /* Cambia #nuevoColorDeFondo al color deseado */
+	color: #000000; /* Cambia #nuevoColorDeTexto al color de texto deseado */
+	border-radius: 20px;
+}
+
+.rounded-blue-button {
+	border-radius: 8px; /* Ajusta esto para cambiar el redondeo de los bordes */
+	background-color: #007bff; /* Color de fondo azul */
+	color: white; /* Color del texto */
+	border: none; /* Sin borde */
+	padding: 10px 20px; /* Espaciado interno del botón */
+	cursor: pointer; /* Cambia el cursor para indicar que es clickeable */
+	/* Otras propiedades que quieras añadir, como hover effects, etc. */
+}
+
+.rounded-blue-button:hover {
+	background-color: #0056b3; /* Un azul más oscuro para el efecto hover */
+}
+
+.sidebar {
+	position: fixed; /* Fija la barra lateral en la pantalla */
+	top: 0;
+	left: 0;
+	height: 100vh; /* Altura completa de la ventana */
+	width: 250px; /* Ajusta el ancho según tus necesidades */
+	border-radius: 0 15px 15px 0; /* Esquinas redondeadas a la derecha */
+	background-color: #f0f0f0; /* Cambia al color que prefieras */
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+	overflow-y: auto; /* Permite desplazarse si el contenido es muy largo */
+}
+
+.sidebar p {
+	text-align: center;
+	font-family: 'Arial', sans-serif; /* Cambia a la fuente que prefieras */
+	color: #333; /* Color del texto */
+}
+
+.profile-section img {
+	width: 130px; /* Ajusta según tus necesidades */
+	height: 130px;
+	border-radius: 50%; /* Para hacer la imagen circular */
+	display: block;
+	margin: 10px auto;
+}
+
+.search-section, .data-table {
+        margin-top: 20px;
+	padding: 10px;
+}
+
+.custom-navbar-bg {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.custom-navbar-text {
+	font-size: 30px;
+}
+
+.form-label {
+	font-weight: bold; /* Esto hará que el texto del label sea en negrita */
+}
+
+
+.accordion-button {
+	background-color: #f2f2f2; /* Cambia esto por el color de fondo que prefieras */
+}

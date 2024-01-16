@@ -1,0 +1,88 @@
+import os
+import json
+import redis
+from dotenv import load_dotenv
+
+from iota_sdk import Wallet, MetadataFeature, hex_to_utf8, TagFeature
+
+r = redis.Redis(host='localhost', port=6379, db=0)
+hash_k = 'transaction:1'
+field = 'transaction_id'
+value = r.hget(hash_k, field)
+decoded_value = value.decode('utf-8')
+print(decoded_value)
+# This example uses secrets in environment variables for simplicity which
+# should not be done in production.
+load_dotenv()
+
+wallet = Wallet(os.environ['WALLET_DB_PATH'])
+
+account = wallet.get_account('TestCR23')
+account.sync({'syncIncomingTransactions': True})
+
+# All transactions sent from the the account
+transactions = account.transactions()
+print('Sent transactions:')
+for transaction in transactions:
+        print(transaction.transactionId)
+       
+specific_transaction_id = decoded_value
+
+# Incoming transactions
+incoming_transactions = account.incoming_transactions()
+print('Received transactions:')
+for transaction in incoming_transactions:
+    if transaction.transactionId == specific_transaction_id:
+        transaction_id = transaction.transactionId
+        #rint(transaction.payload)
+        #segment_hex = metadata_feature.data
+        #segment = bytes.fromhex(segment_hex)
+        #print(segment)
+
+def retrieve_segment_from_tangle(transaction_id, account):
+    """Recupera un segmento a partir de su Transaction ID desde Tangle."""
+    transaction = account.get_transaction(transaction_id)
+    metadata_feature = transaction.features[0]  # Asumimos que el segmento está en la primera característica
+    segment_hex = metadata_feature.data
+    segment = bytes.fromhex(segment_hex)
+    return segment
+
+def reconstruct_file_from_segments(transaction_ids, account, output_filename):
+    """Reconstruye un archivo a partir de una lista de Transaction IDs."""
+    with open(output_filename, 'wb') as file:
+        for transaction_id in transaction_ids:
+            segment = retrieve_segment_from_tangle(transaction_id, account)
+        file.write(segment)
+
+#transaction_ids = [transaction.transactionId for transaction in incoming_transactions]
+#reconstruct_file_from_segments(transaction_ids, account, '/enc/test.txt')
+    
+#if transaction.transactionId == specific_transaction_id:
+ #   detailed_transaction = account.get_transaction(specific_transaction_id)
+ #   print("DT", detailed_transaction)
+
+    #for transaction in transaction_id:
+try:
+    transaction_json = json.dumps(transaction.payload)
+    #    print("JSON",transaction_json)  
+except TypeError as e:
+    print(f"Error al convertir la transacción a JSON: {e}")
+data = json.loads(transaction_json)
+print("DATA", data)
+dicc = {}
+
+#for key in data:
+    #print(key)
+#try:
+#    features = data['essence']['outputs'][0]['features'][0]['tag']
+#    print(features)
+#except:
+#    print("Not exist tag")
+try:
+    features = data['essence']['outputs'][0]['features'][0]['data']
+#    print(features)
+except:
+    print("Not exist features")
+
+encryp = hex_to_utf8(features)
+print("EN", encryp)

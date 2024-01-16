@@ -1,0 +1,700 @@
+
+MA5608T#
+
+  Please check whether system data has been changed, and save data in time
+
+  Configuration console time out, please retry to log on
+Connection closed by foreign host.
+root@backend:/home/gibgo#
+root@backend:/home/gibgo#
+root@backend:/home/gibgo#
+root@backend:/home/gibgo#
+root@backend:/home/gibgo#
+root@backend:/home/gibgo# telnet 172.18.110.7
+Trying 172.18.110.7...
+Connected to 172.18.110.7.
+Escape character is '^]'.
+
+Warning: Telnet is not a secure protocol, and it is recommended to use Stelnet.
+
+>>User name:pgibgo
+>>User password:
+
+
+  Huawei Integrated Access Software (MA5608T).
+  Copyright(C) Huawei Technologies Co., Ltd. 2002-2017. All rights reserved.
+
+  -----------------------------------------------------------------------------
+  User last login information:
+  -----------------------------------------------------------------------------
+  Access Type : Telnet
+  IP-Address  : 172.18.110.253
+  Login  Time : 2022-09-22 11:13:59-05:00
+  Logout Time : --
+  -----------------------------------------------------------------------------
+
+MA5608T>
+
+MA5608T>
+
+MA5608T>enable
+
+MA5608T#
+
+MA5608T#
+
+MA5608T#display current-configuration
+{ <cr>|ont<K>|port<K>|section<K>|service-port<K>|simple<K>||<K> }:
+
+  Command:
+          display current-configuration
+[Active: H801MCUD; Standby: H801MCUD]
+[Patch Info: SPH102]
+[MA5600V800R018: 5600]
+#
+[sysmode]
+  <sysmode>
+ switch adsl mode to rfc2662 vdsl mode to tr129
+ xpon mode switch-to profile-mode
+ voice-spec set vag-num 8
+ voice-spec set sip-account-num 2048
+ protocol support h248
+ system ex-mode backup
+ router mode basic
+#
+[global-config]
+  <global-config>
+ undo system snmp-user password security
+ terminal user name buildrun_new_password root *J$1a$Q&:1&f%7hK$6WN]XL71SMPm,N% q{7U$wD4O8cFz3J;.<^!Vac@!$* 7 0000:00:00:00:00:00 2018:01:16:04:22:14 root 1
+first-login-info 0 "-----"
+ terminal user name buildrun_new_password soporte *[$1a$D_~NM}$ZSO$sC;'SeM%{W3u%!UhBtTXPH)HY5|Q>,|5dB"M/f^C$* 0 2021:06:26:08:35:16 2021:06:26:08:35:16 root 2  first-login-info 0 "user"
+ terminal user name buildrun_new_password gibgoo *U$1a$,'l^1b@#1B$]O1'GO&6R7<0H/
+-wLsx4]l8w.voY<G"tIG7Wr#},$* 0 2021:06:28:11:08:32 2021:06:28:11:08:32 root 3
+first-login-info 0 "Gibgp"
+ terminal user name buildrun_new_password pgibgo *[$1a$(VOf%Vapj&$@<;/UWAO&!7#
+688sjE3/buox@5FE[-6I]1,!*{y%$* 0 2021:07:19:14:28:08 2021:07:19:14:28:08 root 4
+first-login-info 0 "-----"
+ system lock type none
+ terminal session max-number 20
+ terminal user name history_password root *J$1a$6VBqS<h+V4$)V!R:(<bjFZ1Lj6_-ks& 1~-eY!4<I,%jh{!E82,-$*
+ traffic table ip index 10 name "ip-traffic-table_10" cir 20480 cbs 657360 pir
+20480 pbs 657360 color-mode color-blind priority 0 priority-policy local-setting
+ traffic table ip index 100 name "MGMT" cir 9984 cbs 329680 pir 19840 pbs 636880
+ color-mode color-blind priority 7 priority-policy local-setting
+ traffic table ip index 101 name "INTERNET" cir 24960 cbs 329680 pir 49984 pbs
+1601488 color-mode color-blind priority 0 priority-policy local-setting
+ traffic table ip index 102 name "IPTV" cir 24960 cbs 329680 pir 49984 pbs
+1601488 color-mode color-blind priority 1 priority-policy local-setting
+ traffic table ip index 103 name "TEL" cir 128 cbs 329680 pir 512 pbs 18384
+color-mode color-blind priority 0 priority-policy local-setting
+ alarm srveff 0x28120039 SA
+ alarm srveff 0x64120001 SA
+ undo trap filter event condition id 0x16000107
+ undo trap filter alarm condition id 0x2d31a00b
+ undo trap filter alarm condition id 0x3d310029
+ undo trap filter alarm condition id 0x3d310030
+ undo trap filter alarm condition id 0x3d310031
+ ftp set ftpuser *%#%#S63\($l^rJHkSJW|g.@M}*QK$c,Qw0_^[+<TA\YI3umL<x}r*@3zY[
+PRlOs%Y@_O~Q0MOJnA:Y/<GJ1C%#%#*
+ ssh client key-exchange sftp dh_group1_sha1 dh_group14_sha1
+dh_group_exchange_sha1 dh_group_exchange_sha256
+ resource threshold mem 94
+ dba-profile add profile-id 10 profile-name "dba-profile_10" type2 assure 5120
+ dba-profile add profile-id 11 profile-name "soporte" type3 assure 8000 max
+29952
+ dba-profile add profile-id 12 profile-name "V2dba" type4 max 4096000
+ dba-profile add profile-id 13 profile-name "dba-profile_13" type3 assure 4992
+max 19968
+ dba-profile add profile-id 20 profile-name "ggoMGMNT" type3 assure 9984 max
+9984
+ dba-profile add profile-id 21 profile-name "ggoINTERNET" type3 assure 9984 max
+49984
+ dba-profile add profile-id 22 profile-name "ggoIPTV" type3 assure 9984 max
+49984
+ dba-profile add profile-id 23 profile-name "ggoVOIP" type3 assure 9984 max
+49984
+ dba-profile add profile-id 100 profile-name "MGMT" type4 max 19968
+ dba-profile add profile-id 101 profile-name "INTERNET" type4 max 49984
+ dba-profile add profile-id 102 profile-name "IPTV" type4 max 19968
+ dba-profile add profile-id 103 profile-name "TEL" type4 max 512
+ dba-profile add profile-id 201 profile-name "dba-profile_201" type3 assure 9984
+ max 49984
+ dba-profile add profile-id 202 profile-name "dba-profile_202" type3 assure 9984
+ max 49984
+ dba-profile add profile-id 203 profile-name "dba-profile_203" type3 assure 9984
+ max 49984
+ dba-profile add profile-id 204 profile-name "dba-profile_204" type3 assure 128
+max 512
+ ont tr069-server-profile add profile-id 1 profile-name "tr069GCTS" url "http://
+172.18.110.253:7457"
+ ont tr069-server-profile add profile-id 13 profile-name "V2tr069p" url "http://
+172.18.110.253:7547" user "gibgo" "%#%#K_kb(A\jWWc:3R:,eW(XmZ.8'k!2}VafPX'O>5!
+FsX\X=u[j+1yK'5SlRev'%#%#"
+ ont tr069-server-profile add profile-id 15 profile-name "
+tr069-server-profile_15" url "http://10.10.90.1:7547" user "gibgo" "%#%#K_kb(A\
+jWWc:3R:,eW(XmZ.8'k!2}VafPX'O>5!FsX\X=u[j+1yK'5SlRev'%#%#"
+ ont wan-profile profile-id 0 profile-name "wan-profile_0"
+  nat enable
+  quit
+ ont wan-profile profile-id 13 profile-name "ggoWanp"
+  connection-type bridge
+  nat enable
+  quit
+ ont policy-route-profile profile-id 0 profile-name "policy-route-profile_0"
+  policy-route 0 port-based eth 1 wlan 1 wan 3
+  quit
+ ont policy-route-profile profile-id 13 profile-name "policy-route-profile_13"
+  policy-route 0 port-based eth 1 wlan 1 wan 3
+  quit
+ gpon ont home-gateway config-method omci
+ ont-srvprofile gpon profile-id 1 profile-name "srv-profile_1"
+  ont-port eth 1
+  port vlan eth 1 translation 50 user-vlan 50
+  commit
+ ont-srvprofile gpon profile-id 2 profile-name "svcGCTS"
+  ont-port pots adaptive 32 eth adaptive 8
+  port vlan eth 1 translation 100 user-vlan 100
+  port vlan eth 2 translation 101 user-vlan 101
+  port vlan eth 3 translation 102 user-vlan 102
+  port vlan eth 5 translation 100 user-vlan 100
+  port vlan eth 5 translation 101 user-vlan 101
+  port vlan eth 5 translation 102 user-vlan 102
+  commit
+ ont-srvprofile gpon profile-id 4 profile-name "4ETH-2POTS"
+  ont-port pots 4 eth 2
+  port vlan eth 1 translation 50 user-vlan 50
+  port vlan eth 2 translation 50 user-vlan 50
+  commit
+ ont-srvprofile gpon profile-id 10 profile-name "srv-profile_10"
+  ont-port pots 2 eth 4 catv adaptive 8
+  port vlan eth 1 translation 50 user-vlan 50
+  port vlan eth 2 translation 50 user-vlan 50
+  port vlan eth 3 translation 50 user-vlan 50
+  port vlan eth 4 translation 50 user-vlan 50
+  commit
+ ont-srvprofile gpon profile-id 11 profile-name "soporte"
+  ont-port pots adaptive 32 eth adaptive 8 catv adaptive 8
+  port vlan eth 1 translation 3 user-vlan 3
+  port vlan eth 2 translation 3 user-vlan 3
+  port vlan eth 3 translation 3 user-vlan 3
+  port vlan eth 4 translation 3 user-vlan 3
+  commit
+ ont-srvprofile gpon profile-id 12 profile-name "srv-profile_12"
+  ont-port eth 1 catv 1
+  port vlan eth 1 translation 50 user-vlan 50
+  commit
+ ont-srvprofile gpon profile-id 13 profile-name "V2srvp"
+  ont-port eth adaptive 8
+  port vlan eth 1 translation 35 user-vlan 35
+  port vlan eth 1 translation 50 user-vlan 50
+  port vlan eth 1 translation 100 user-vlan 100
+  commit
+ ont-srvprofile gpon profile-id 15 profile-name "testVlan100"
+  port vlan iphost translation 100 user-vlan 100
+  commit
+ ont-srvprofile gpon profile-id 20 profile-name "srvGCTS"
+  ont-port pots adaptive 32 eth adaptive 8
+  port vlan eth 1 translation 50 user-vlan 50
+  port vlan eth 2 translation 69 user-vlan 69
+  port vlan eth 3 translation 35 user-vlan 35
+  port vlan eth 4 translation 36 user-vlan 36
+  commit
+ ont-lineprofile gpon profile-id 0 profile-name "line-profile_default_0"
+  tcont 0 dba-profile-id 2
+  tcont 1 dba-profile-id 0
+  commit
+  quit
+ ont-lineprofile gpon profile-id 2 profile-name "ggoGCTS"
+  tcont 1 dba-profile-id 20
+  tcont 2 dba-profile-id 21
+  tcont 3 dba-profile-id 22
+  tcont 4 dba-profile-id 23
+  tcont 5 dba-profile-id 20
+  tcont 6 dba-profile-id 21
+  tcont 7 dba-profile-id 22
+  tcont 8 dba-profile-id 23
+  gem add 1 eth tcont 1
+  gem add 2 eth tcont 2
+  gem add 3 eth tcont 3
+  gem add 4 eth tcont 4
+  gem add 5 eth tcont 1
+  gem add 6 eth tcont 1
+  gem add 7 eth tcont 2
+  gem add 8 eth tcont 3
+  gem mapping 1 1 vlan 69
+  gem mapping 2 2 vlan 35
+  gem mapping 3 3 vlan 36
+  gem mapping 4 4 vlan 37
+  gem mapping 6 6 vlan 100
+  gem mapping 7 7 vlan 101
+  gem mapping 8 0 vlan 102
+  commit
+  quit
+ ont-lineprofile gpon profile-id 10 profile-name "line-profile_10"
+  tcont 5 dba-profile-id 10
+  gem add 10 eth tcont 5
+  gem mapping 10 1 vlan 50
+  gem mapping 10 2 vlan 46
+  commit
+  quit
+ ont-lineprofile gpon profile-id 11 profile-name "soporte"
+  tcont 1 dba-profile-id 11
+  gem add 1 eth tcont 1
+  gem mapping 1 1 vlan 3
+  commit
+  quit
+ ont-lineprofile gpon profile-id 12 profile-name "line-profile_12"
+  tcont 5 dba-profile-id 10
+  gem add 10 eth tcont 5
+  gem mapping 10 1 vlan 50
+  commit
+  quit
+ ont-lineprofile gpon profile-id 13 profile-name "V2linep"
+  tr069-management enable
+  tr069-management ip-index 1
+  tcont 1 dba-profile-id 13
+  tcont 2 dba-profile-id 21
+  tcont 3 dba-profile-id 21
+  gem add 131 eth tcont 1
+  gem add 132 eth tcont 2
+  gem add 133 eth tcont 3
+  gem mapping 131 0 vlan 100
+  gem mapping 132 3 vlan 35
+  gem mapping 133 4 vlan 101
+  commit
+  quit
+ ont-lineprofile gpon profile-id 14 profile-name "14linep"
+  tr069-management enable
+  commit
+  quit
+#
+[device-config]
+  <device-config>
+ board add 0/0 H805GPFD
+ board add 0/1 H805GPFD
+ board add 0/4 H801MPWD
+ board add standby sub0 CPCA
+#
+[public-config]
+  <public-config>
+ monitor uplink-port traffic port 0/2/0
+ monitor uplink-port traffic port 0/2/1
+ monitor uplink-port traffic port 0/2/2
+ monitor uplink-port traffic port 0/2/3
+ monitor uplink-port traffic port 0/3/0
+ monitor uplink-port traffic port 0/3/1
+ monitor uplink-port traffic port 0/3/2
+ monitor uplink-port traffic port 0/3/3
+ timezone GMT- 05:00
+ snmp-agent local-engineid 800007DB0348FD8E49274A01
+ snmp-agent community write %#%#Nh&XNp&@J'!MzpBib$H.z-OiIn8uV-RKlf!LSSwRFZ(2MY<
+eB"=I{'.}!k,-%#%# mib-view MyView
+ snmp-agent community read %#%#71D2(mOBuHSJ-+2TY~-9{braH[)YsWRG'F3*\W=Gy1y#({t^
+UHRK]Z7l|zT3%#%# mib-view mactable
+ snmp-agent community write %#%#dzkLN&cFz"//Z3R3hNY2kzW=)M2rc~wFGf%^70\W)LER=m\
+Iq7^<XL)q6R=C%#%#
+ snmp-agent mib-view MyView include iso8802
+ snmp-agent mib-view MyView include ieee
+ snmp-agent mib-view MyView include internet
+ snmp-agent mib-view MyView include lagMIB
+ snmp-agent mib-view MyView include enterprises
+ snmp-agent mib-view MyView include snmpUsmMIB
+ snmp-agent mib-view MyView include snmpVacmMIB
+ snmp-agent mib-view MyView include hwXponDeviceProfileObjects.49
+ snmp-agent mib-view MyView include dot1agCfmMepDbChassisIdSubtype
+ snmp-agent mib-view mactable include dot1dBridge.4.3.1.1
+ snmp-agent mib-view V2snmppviewp include hwDatacomm.123.1.17
+ snmp-profile add profile-id 1 profile-name "gibgo" v2c "%#%#pX~o@0A}Y3HcFu>I1#
+r!W}+d=q2#q-o~U2*rr*;O{K0w21!m]88Jb$X[A_gJ%#%#" "%#%#(E[b&xb]}V|BfU<M+fr6BB&O"&
+jbIQA.dZR+CUkXny{TVxdW>#']OOH7Qk:Z%#%#" 172.18.110.253 162 "%#%#Eel5FX}Q;>T(
+g3Ut-*a9[3K90pnoLO),MmFQT>/%gQqnOpAj#TTtCEL0!:]!%#%#"
+ snmp-profile add profile-id 13 profile-name "SNMPgcts" v2c "%#%#k)1l2|q)1P)d+$
+5;U#;3mqO{6n>%I-+TU[Xe`W~&.`xVD\D&iO`(r7"}UCpB%#%#" "%#%#a`8':A_*jJ0j)S>Zq]XGp}=
+;ITtX^689{_"dESyDCvU~Lt5-z~PaftB{|l@~%#%#" 10.10.90.1 162 "%#%#2C58A>Ood5j]
+7tIj74&F%+YG5,L#L7i=+6~3Ct<$h%tf%;EM160E3fQo`{9H%#%#"
+#
+[vlan-config]
+  <vlan-config>
+ vlan 2 smart
+ vlan 35 to 37 smart
+ vlan 46 smart
+ vlan 50 smart
+ vlan 69 smart
+ vlan 100 to 102 smart
+ port vlan 2 0/2 0
+ port vlan 35 to 37 0/2 0
+ port vlan 35 to 37 0/2 1
+ port vlan 46 0/2 1
+ port vlan 50 0/2 0
+ port vlan 69 0/2 0
+ port vlan 69 0/2 1
+ port vlan 100 0/2 1
+ port vlan 100 to 102 0/2 0
+#
+[mcu]
+  <mcu-0/2>
+interface mcu 0/2
+ mdi 0 normal
+ speed 0 1000
+ speed 1 1000
+ speed 2 1000
+ speed 3 1000
+ native-vlan 0 vlan 2
+#
+[gpon]
+  <gpon-0/0>
+ interface gpon 0/0
+ port 0 ont-auto-find enable
+ port 0 fec enable
+ port 2 ont-auto-find enable
+ port 15 ont-auto-find enable
+ ont add 0 0 sn-auth "4D53544303474006" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 0 profile-id 13
+ ont add 0 1 sn-auth "4D5354430347E7CD" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 1 profile-id 13
+ ont add 0 2 sn-auth "4D535443034BF18D" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 2 profile-id 13
+ ont add 0 3 sn-auth "4D53544309417688" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 3 profile-id 13
+ ont add 0 4 sn-auth "4D53544332FD0EC5" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 4 profile-id 13
+ ont add 0 5 sn-auth "4D53544332FD63B0" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 5 profile-id 13
+ ont add 0 6 sn-auth "4D53544338ED495F" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 6 profile-id 13
+ ont add 0 7 sn-auth "4D53544338F03F7C" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 7 profile-id 13
+ ont add 0 8 sn-auth "4D53544338F0A0D4" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 8 profile-id 13
+ ont add 0 9 sn-auth "4D53544338F16551" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 9 profile-id 13
+ ont add 0 10 sn-auth "4D5354433B8B98E1" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 10 profile-id 13
+ ont add 0 11 sn-auth "4D5354433B8C1073" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 11 profile-id 13
+ ont add 0 12 sn-auth "4D5354433B8D181E" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 12 profile-id 13
+ ont add 0 13 sn-auth "4D5354430347EE8B" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 13 profile-id 13
+ ont add 0 14 sn-auth "41534B5900397D86" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 14 profile-id 13
+ ont add 0 15 sn-auth "41534B5900512CE6" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 15 profile-id 13
+ ont add 0 16 sn-auth "41534B59002E245F" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 16 profile-id 13
+ ont add 0 17 sn-auth "41534B590034A095" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 17 profile-id 13
+ ont add 0 18 sn-auth "41534B59004B80AC" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 18 profile-id 13
+ ont add 0 19 sn-auth "41534B59002BDD2E" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 19 profile-id 13
+ ont add 0 20 sn-auth "41534B5900176CC6" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 20 profile-id 13
+ ont add 0 21 sn-auth "41534B59003092E4" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 21 profile-id 13
+ ont add 0 22 sn-auth "41534B5900308DD0" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 22 profile-id 13
+ ont add 0 23 sn-auth "41534B5900347852" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 23 profile-id 13
+ ont add 0 24 sn-auth "41534B590022F447" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 24 profile-id 13
+ ont add 0 25 sn-auth "41534B59002BD245" omci ont-lineprofile-id 13
+ont-srvprofile-id 13 desc "ONT_NO_DESCRIPTION"
+ ont tr069-server-config 0 25 profile-id 13
+#
+  <gpon-0/1>
+ interface gpon 0/1
+ port 0 ont-auto-find enable
+ port 2 ont-auto-find enable
+#
+[emu-config]
+  <emu-config>
+ emu add 0 fan 0 1  "H831FCBB"
+ emu add 1 h801pmu 0 0  "H801PMUB"
+#
+[bbs-config]
+  <bbs-config>
+ service-port 100 vlan 100 gpon 0/0/0 ont 0 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 101 vlan 101 gpon 0/0/0 ont 0 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 102 vlan 102 gpon 0/0/0 ont 0 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 110 vlan 100 gpon 0/0/0 ont 1 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 111 vlan 101 gpon 0/0/0 ont 1 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 112 vlan 102 gpon 0/0/0 ont 1 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 120 vlan 100 gpon 0/0/0 ont 2 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 121 vlan 101 gpon 0/0/0 ont 2 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 122 vlan 102 gpon 0/0/0 ont 2 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 130 vlan 100 gpon 0/0/0 ont 3 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 131 vlan 101 gpon 0/0/0 ont 3 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 132 vlan 102 gpon 0/0/0 ont 3 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 140 vlan 100 gpon 0/0/0 ont 4 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 141 vlan 101 gpon 0/0/0 ont 4 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 142 vlan 102 gpon 0/0/0 ont 4 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 150 vlan 100 gpon 0/0/0 ont 5 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 151 vlan 101 gpon 0/0/0 ont 5 gemport 132 multi-service user-vlan 101 tag-transform translate
+ service-port 152 vlan 102 gpon 0/0/0 ont 5 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 160 vlan 100 gpon 0/0/0 ont 6 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 161 vlan 101 gpon 0/0/0 ont 6 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 162 vlan 102 gpon 0/0/0 ont 6 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 170 vlan 100 gpon 0/0/0 ont 7 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 171 vlan 101 gpon 0/0/0 ont 7 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 172 vlan 102 gpon 0/0/0 ont 7 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 180 vlan 100 gpon 0/0/0 ont 8 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 181 vlan 101 gpon 0/0/0 ont 8 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 182 vlan 102 gpon 0/0/0 ont 8 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 190 vlan 100 gpon 0/0/0 ont 9 gemport 131 multi-service user-vlan
+100 tag-transform translate
+ service-port 191 vlan 101 gpon 0/0/0 ont 9 gemport 132 multi-service user-vlan
+101 tag-transform translate
+ service-port 192 vlan 102 gpon 0/0/0 ont 9 gemport 133 multi-service user-vlan
+102 tag-transform translate
+ service-port 1100 vlan 100 gpon 0/0/0 ont 10 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1101 vlan 101 gpon 0/0/0 ont 10 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1102 vlan 102 gpon 0/0/0 ont 10 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1110 vlan 100 gpon 0/0/0 ont 11 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1111 vlan 101 gpon 0/0/0 ont 11 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1112 vlan 102 gpon 0/0/0 ont 11 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1120 vlan 100 gpon 0/0/0 ont 12 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1121 vlan 101 gpon 0/0/0 ont 12 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1122 vlan 102 gpon 0/0/0 ont 12 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1130 vlan 100 gpon 0/0/0 ont 13 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1131 vlan 101 gpon 0/0/0 ont 13 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1132 vlan 102 gpon 0/0/0 ont 13 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1140 vlan 100 gpon 0/0/0 ont 14 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1141 vlan 101 gpon 0/0/0 ont 14 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1142 vlan 102 gpon 0/0/0 ont 14 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1150 vlan 100 gpon 0/0/0 ont 15 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1151 vlan 101 gpon 0/0/0 ont 15 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1152 vlan 102 gpon 0/0/0 ont 15 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1160 vlan 100 gpon 0/0/0 ont 16 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1161 vlan 101 gpon 0/0/0 ont 16 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1162 vlan 102 gpon 0/0/0 ont 16 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1170 vlan 100 gpon 0/0/0 ont 17 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1171 vlan 101 gpon 0/0/0 ont 17 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1172 vlan 102 gpon 0/0/0 ont 17 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1180 vlan 100 gpon 0/0/0 ont 18 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1181 vlan 101 gpon 0/0/0 ont 18 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1182 vlan 102 gpon 0/0/0 ont 18 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1190 vlan 100 gpon 0/0/0 ont 19 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1191 vlan 101 gpon 0/0/0 ont 19 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1192 vlan 102 gpon 0/0/0 ont 19 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1200 vlan 100 gpon 0/0/0 ont 20 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1201 vlan 101 gpon 0/0/0 ont 20 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1202 vlan 102 gpon 0/0/0 ont 20 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1210 vlan 100 gpon 0/0/0 ont 21 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1211 vlan 101 gpon 0/0/0 ont 21 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1212 vlan 102 gpon 0/0/0 ont 21 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1220 vlan 100 gpon 0/0/0 ont 22 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1221 vlan 101 gpon 0/0/0 ont 22 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1222 vlan 102 gpon 0/0/0 ont 22 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1230 vlan 100 gpon 0/0/0 ont 23 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1231 vlan 101 gpon 0/0/0 ont 23 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1232 vlan 102 gpon 0/0/0 ont 23 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1240 vlan 100 gpon 0/0/0 ont 24 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1241 vlan 101 gpon 0/0/0 ont 24 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1242 vlan 102 gpon 0/0/0 ont 24 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+ service-port 1250 vlan 100 gpon 0/0/0 ont 25 gemport 131 multi-service
+user-vlan 100 tag-transform translate
+ service-port 1251 vlan 101 gpon 0/0/0 ont 25 gemport 132 multi-service
+user-vlan 101 tag-transform translate
+ service-port 1252 vlan 102 gpon 0/0/0 ont 25 gemport 133 multi-service
+user-vlan 102 tag-transform translate
+#
+[abs-config]
+  <abs-config>
+ raio sub-option 0x90 dhcp-option82 enable
+#
+[dhcp-config]
+  <dhcp-config>
+ dhcp proxy enable
+ dhcp option82 enable
+ dhcp sub-option7 enable
+ dhcp option82 transparent user-vlan untag multi-tag single-tag "0-4095"
+ dhcp reverse enable
+#
+[config]
+  <config>
+ mpls label start 8192
+#
+[dhcp]
+  <dhcp>
+ dhcp relay-interface src-ip send
+ dhcp domain "docsistest.com"
+ dhcp-gateway learning enable
+#
+[prevlanif]
+  <prevlanif>
+ interface vlanif2
+ interface vlanif50
+ interface vlanif69
+ interface vlanif100
+ interface vlanif101
+ interface vlanif102
+#
+[vlanif]
+  <vlanif2>
+interface vlanif2
+ ip address 172.18.109.7 255.255.255.0
+#
+  <vlanif50>
+interface vlanif50
+ ip address 172.16.23.48 255.255.255.0
+#
+  <vlanif69>
+interface vlanif69
+ ip address 10.10.64.7 255.255.255.0
+ arp proxy enable
+#
+  <vlanif100>
+interface vlanif100
+ ip address 10.10.120.7 255.255.248.0
+ ip address 10.10.90.7 255.255.255.0 sub
+#
+  <vlanif101>
+interface vlanif101
+ ip address 10.10.128.7 255.255.248.0
+#
+  <vlanif102>
+interface vlanif102
+ ip address 10.10.136.7 255.255.248.0
+#
+[meth]
+  <meth0>
+interface meth0
+ ip address 172.18.110.7 255.255.255.0
+#
+[null]
+  <null0>
+interface null0
+#
+[aaa]
+  <aaa>
+aaa
+ authentication-scheme "default"
+ #
+ authorization-scheme "default"
+ #
+ accounting-scheme "default"
+ #
+ domain "default"
+ #
+#
+[route-policy]
+  <route-policy>
+route-policy 1 permit node 1
+#
+[post-system]
+  <post-system>
+ip route-static 0.0.0.0 0.0.0.0 172.18.110.253
+ ssh user root authentication-type password
+ ssh user soporte authentication-type password
+ ssh user gibgoo authentication-type password
+ ssh user pgibgo authentication-type password
+ ssh server cipher 3des_cbc aes128_cbc aes256_cbc aes128_ctr aes256_ctr
+aes128_gcm aes256_gcm blowfish_cbc
+ ssh client cipher 3des_cbc aes128_cbc aes256_cbc aes128_ctr aes256_ctr
+aes128_gcm aes256_gcm blowfish_cbc
+ ssh server hmac md5 md5_96 sha1 sha1_96 sha2_256 sha2_256_96
+ ssh client hmac md5 md5_96 sha1 sha1_96 sha2_256 sha2_256_96
+ ssh server key-exchange dh_group1_sha1 dh_group_exchange_sha1
+dh_group_exchange_sha256 dh_group14_sha1
+ ssh client key-exchange dh_group1_sha1 dh_group_exchange_sha1
+dh_group_exchange_sha256 dh_group14_sha1
+ arp proxy enable
+#
+return

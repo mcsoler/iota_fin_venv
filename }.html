@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>P.A.I.P Ciberseguridad</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles_prod.css') }}">
+	<link rel="shortcut icon" href="/static/css/img/logo_paid.png">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    </head>
+    <body>
+	<nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
+  	  <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+	      <img src="/static/css/img/logo_paid.png" alt="Logo" width="30" height="24" class="d-inline-block a
+	       lign-text-top">
+	      P.A.i.P Ciberseguridad
+	    </a>
+    	    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      	      <span class="navbar-toggler-icon"></span>
+    	    </button>
+    	    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+               <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+		      {% if username %}
+		          <p>Bienvenido, {{ username }}</p>
+		      {% else %}
+		          <p>Por favor, inicia sesión</p>
+		      {% endif %}
+		  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+		  <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">App cifrado de datos</a>
+                </li>
+		<li class="nav-item">
+		  <a class="nav-link" href="{{ url_for('documentacion') }}">Documentación</a>
+		</li>
+                <li class="nav-item">
+		  <a class="nav-link" href="{{ url_for('logout') }}">Cerrar sesión</a>
+                </li>
+              </ul>
+            </div>
+	</nav>
+	<div class="yellow-gradient">
+            <div class="container-fluid mt-5"> 
+		<!--	    <div class="original-image"> -->
+	   	
+	        <div class="row">	        
+		    <div class="col-lg-2 col-md-2 col-sm-2 col-2">
+			    <!-- 	<img src="static/css/img/app.png" alt="app" class="img-responsive"> -->
+			<div class="sidebar">  
+			    <div class="profile-section">
+				<br>
+				<br>
+				<img src="static/css/img/avatar.jpg" alt="Foto de Perfil" class="img-responsive">
+                                <p>Nombre del Usuario</p>
+			        <p>Otra Información del Perfil</p>
+			    </div>
+			</div>
+		    </div>
+		    <div class="col-lg-6 col-md-4 col-sm-12 col-12">
+			<div class="search-section">
+			    <input type="date" id="searchDate" name="searchDate">
+			    <button onclick="searchByDate()">Buscar</button>
+			</div>
+			<div class="data-table">
+			    <table class="table table-striped">
+			    <!-- La tabla se llenará con datos después de realizar la búsqueda -->
+			      <thead>
+		                <tr>
+				  <th scope="col">#</th>
+				  <th scope="col">First</th>
+				  <th scope="col">Last</th>
+				  <th scope="col">Handle</th>
+			        </tr>
+			      </thead>
+			      <tbody>
+			        <tr>
+			          <th scope="row">1</th>
+			          <td>Mark</td>
+			          <td>Otto</td>
+			          <td>@mdo</td>
+			        </tr>
+			        <tr>
+			          <th scope="row">2</th>
+			          <td>Jacob</td>
+			          <td>Thornton</td>
+			          <td>@fat</td>
+			        </tr>
+			        <tr>
+			          <th scope="row">3</th>
+			          <td colspan="2">Larry the Bird</td>
+			          <td>@twitter</td>
+			        </tr>
+			      </tbody>
+			    </table>
+			 </div>
+	            </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 col-12"> <!-- Segundo contenedor, puedes cambiar el color de fondo -->
+			<nav class="navbar bg-body-tertiary" data-bs-theme="dark">
+			  <div class="container-fluid custom-navbar-bg">
+			      <a class="navbar-brand custom-navbar-bg" href="#">
+			 	<img src="/static/css/img/logo_paid.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+				<span class="custom-navbar-text">TangleCrypt</span>
+			      </a>
+			  </div>
+			</nav>
+			{% if message %}
+			<div class="alert alert-info">
+			            {{ message }}
+			</div>
+			{% endif %}
+			<div class="alert alert-success" role="alert">
+			    <h4 class="alert-heading">¡Bienvenido a TangleCrypt!</h4>
+			    <p>Su privacidad y seguridad son nuestra principal prioridad. Con TangleCrypt, sus archivos serán cifrados con la más avanzada tecnología de Tangle, asegurando una protección sin precedentes contra accesos no autorizados.</p>
+			    <hr>
+			    <p class="mb-0">Comience a proteger su información: Seleccione el archivo que desea asegurar y haga clic en 'Encriptar' y observe cómo TangleCrypt transforma su archivo en un bastión de seguridad y visualice sus id de transacciones tangle haciendo clic en 'Block ID'.</p>
+			</div>
+			<form action="/encrypsec" method="post" enctype="multipart/form-data" class="mb-3">
+			    <div class="input-group">  
+  		                <input type="file" class="form-control" id="inputGroupFile02" name="file" onchange="updateLabel()">
+				<label class="input-group-text my-form" for="inputGroupFile02">Seleccione archivo</label>
+				<span id="file-name" class="ms-2 p-2 border rounded shadow-sm bg-white">Ningún archivo seleccionado</span>
+		            </div>
+			    <button type="submit" class="btn btn-primary mt-2">Encriptar y enviar datos</button>
+			    <button type="submit" class="btn btn-primary mt-2" id="encryptButton">Block ID tangle</button>
+			 </form>
+			 <form action="/download_file" method="get">
+				 <button type="submit" class="rounded-blue-button">Desencriptar y descargar archivo</button>
+			 </form>
+			<div id="loadingBar">
+				    <div class="spinner"></div>
+			</div>
+			<div class="mb-3">
+  			    <label for="exampleFormControlTextarea1" class="form-label">Detalles transacciones tangle</label>
+  			    <textarea class="form-control" id="exampleFormControlTextarea1" ></textarea>
+		        </div>
+			<div class="accordion accordion-flush" id="accordionFlushExample">
+  			    <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Dirección de mi billetera en la red tangle
+                                  </button>
+                                </h2>
+                            	<div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      			            <div class="accordion-body">Dirección: rms1qzklrl4s6sgurfs2hdl3auas3en06343xqcq6ye5un6rxvmx2adpcr9spy8</div>
+  			    </div>
+  			<div class="accordion-item">
+    			    <h2 class="accordion-header">
+      		   	      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Red de tangle 
+                              </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+			            <a href="https://explorer.shimmer.network/testnet">https://explorer.shimmer.network/testnet</a>
+				</div>    
+                            </div>
+                        </div>
+                        
+                    </div>
+		     
+                </div>
+        </div>
+	<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>
+
+
+
